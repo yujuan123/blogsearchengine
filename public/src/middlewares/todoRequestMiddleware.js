@@ -7,7 +7,8 @@ const todoRequestMiddleware = store=> next=> action=> {
     request.post('/todos')
         .type('form')
         .send({
-          text: action.text
+          val1:action.val1,
+          val2:action.val2
         })
         .end(()=> {
           store.dispatch({
@@ -18,6 +19,7 @@ const todoRequestMiddleware = store=> next=> action=> {
   case 'INIT':
     request.get('/todos')
         .end((err, res)=> {
+          console.log(res.body);
           next({
             type: 'TODO_LOADED',
             data: res.body

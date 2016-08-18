@@ -5,6 +5,7 @@ let router = express.Router();
 
 router.get('/', (req, res)=> {
   Todo.find((err, data)=> {
+    console.log(data + 'server')
     res.send(data);
   });
 });
@@ -32,7 +33,8 @@ router.put('/:id', (req, res)=> {
 
 router.post('/', (req, res, next)=> {
   new Todo({
-    text: req.body.text
+    val1: req.body.val1,
+    val2: req.body.val2
   }).save((err, todo) => {
     if(err) {
       return next(err);

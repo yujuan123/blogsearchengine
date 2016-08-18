@@ -4,11 +4,12 @@ import { addTodo } from '../actions';
 
 const mapStateToProps = (state)=> (state);
 const mapDispatchToProps = (dispatch)=> ({
-  addTodo: (text)=> {
-    dispatch(addTodo(text));
+  addTodo: (val1,val2)=> {
+    dispatch(addTodo(val1,val2));
   }
 });
 
 const AddTodo = connect(mapStateToProps, mapDispatchToProps)(AddTodoInput);
 
 export default AddTodo;
+                                                      

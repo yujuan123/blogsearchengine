@@ -5,11 +5,10 @@ import resultList from './reducers';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import todoRequestMiddleware from './middlewares/todoRequestMiddleware';
-import peopleRequestMiddleware from './middlewares/peopleRequestMiddleware';
 
 const store = createStore(
     resultList,
-    applyMiddleware(todoRequestMiddleware, peopleRequestMiddleware)
+    applyMiddleware(todoRequestMiddleware)
 );
 
 store.dispatch({
@@ -20,5 +19,5 @@ render(
     <Provider store={store}>
       <App/>
     </Provider>,
-  document.getElementById('app')
+    document.getElementById('app')
 );
