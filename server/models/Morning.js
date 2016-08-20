@@ -1,3 +1,6 @@
-/**
- * Created by yujuan on 16-8-19.
- */
+import mongoose from 'mongoose';
+
+const Morning = mongoose.model('Morning',{
+  val1:String,
+  val2:String
+});
