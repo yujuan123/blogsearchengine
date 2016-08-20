@@ -1,5 +1,9 @@
-export const addTodo = (val1,val2)=> ({
-  type: 'ADD_TODO',
-  val1,
-  val2
+export const addMaterial = (data)=> ({
+  type: 'ADD_MATERIAL',
+  data
+});
+
+export const deleteMaterial = (id) => ({
+  type: 'DELETE_MATERIAL',
+   id   
 });
