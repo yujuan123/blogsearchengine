@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import AddTodoInput from '../components/AddTodoInput';
-import { addTodo } from '../actions';
+import { addMaterial } from '../actions';
 
 const mapStateToProps = (state)=> (state);
 const mapDispatchToProps = (dispatch)=> ({
-  addTodo: (val1,val2)=> {
-    dispatch(addTodo(val1,val2));
+  addMaterial: (val1,val2)=> {
+    dispatch(addMaterial({source:val1,amount:val2}));
   }
 });
 
