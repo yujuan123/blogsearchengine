@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import Logo  from './Logo';
 import SliderPicture from './SliderPicture';
+import AddTodo from '../container/AddTodo';
+import ResultList from './ResultList';
 
 class App extends Component {
 
@@ -8,7 +10,8 @@ class App extends Component {
     return (
         <div>
           <Logo/>
-          <SliderPicture/>
+          <AddTodo/>
+          <ResultList/>
         </div>
     );
   }

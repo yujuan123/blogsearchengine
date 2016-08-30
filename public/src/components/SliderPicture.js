@@ -6,7 +6,7 @@ class SliderPicture extends Component {
     this.state = {
       imageIndex: 0
     };
-    setInterval(this.next.bind(this), 5000);
+    setInterval(this.next.bind(this), 3000);
   }
 
   prev() {
@@ -33,7 +33,6 @@ class SliderPicture extends Component {
             <button  className="glyphicon glyphicon-menu-right" onClick={this.next.bind(this) }>.</button>
           </div>
           <img id="picture-sliding" src={address[this.state.imageIndex]}/>
-
         </div>
 
     );
