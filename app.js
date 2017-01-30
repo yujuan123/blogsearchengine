@@ -7,6 +7,7 @@ const app = express();
 
 mongoose.connect('mongodb://localhost/todos');
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
@@ -14,6 +15,10 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(express.static('public'));
 
 regRouters(app);
+
+app.use('*', (req, res)=> {
+  res.sendFile(path.resolve('./public/index.html'));
+});
 
 app.listen(3000, function() {
   console.log('server started at http://localhost:3000'); // eslint-disable-line no-console
