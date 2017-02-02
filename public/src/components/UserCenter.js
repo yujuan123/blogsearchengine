@@ -9,14 +9,24 @@ class UserCenter extends Component {
     return (
         <div className="row user-info blog-body">
           <div className="col-md-4">
-            <img src="images/02.jpg">
+            <img src="images/02.jpg"/>
           </div>
-          <div className="col-md-offset-3 col-md-4">
-            <button className="middle btn-info" value="写文章">
-            </button>
+          <div className="col-md-offset-1 col-md-4">
+            <ul>
+              <li><h3><span className=" iconfont icon-yonghu"> </span>FanBingBing</h3></li>
+              <li><h3><span className="iconfont  icon-iconfont08zhiwei"> </span>Actor</h3></li>
+              <li>
+                <h3>
+                  <a href="#" >
+                    <span className="iconfont icon-brush"> </span>
+                    写文章
+                  </a>
+                </h3>
+              </li>
+            </ul>
           </div>
         </div>
-  );
+    );
 
   }
 }
