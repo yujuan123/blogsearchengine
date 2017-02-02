@@ -5,4 +5,4 @@
 ###第四步：刷新数据库 npm run refreshMongo
 ###第五步：编译程序npm run wpw
 ###第六步：启动程序npm start
-###第七步：在浏览器地址栏输入 localhost://3000/homePage，便可浏览页面
+###第七步：在浏览器地址栏输入 localhost://3000，便可浏览页面
