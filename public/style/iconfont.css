@@ -14,14 +14,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/*购物车里的图标*/
-.icon-iconfont08zhiwei:before { content: "\e611"; }
-
-.icon-yonghu:before { content: "\e60e"; }
-
-.icon-brush:before { content: "\e602"; }
-
-.icon-fountain_pen:before { content: "\e605"; }
-
-.icon-thumbs_up:before { content: "\e609"; }
-
+/*标签*/
+.icon-biaoqian:before { content: "\f0152"; }
+/*用户*/
+.icon-user-outline:before { content: "\e636"; }
+/*标题*/
+.icon-biaoti:before { content: "\e643"; }
+/*写作1*/
+.icon-iconxiezuo01:before { content: "\e614"; }
+/*职位*/
+.icon-zhiwei:before { content: "\e660"; }
+/*发表评论1*/
+.icon-fabiaopinglun:before { content: "\e629"; }
+/*发表评论2*/
+.icon-comm:before { content: "\e608"; }
+/*写作2*/
+.icon-write:before { content: "\e617"; }
+/*发表评论3*/
+.icon-fabiao:before { content: "\e60e"; }
