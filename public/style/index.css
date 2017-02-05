@@ -1,4 +1,27 @@
+/*common css*/
+.mt20{
+    margin-top:20px;
+}
+.mb30{
+    margin-bottom:30px;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.font-style{
+
+}
+/*整体页面*/
 .blog-body{
     width:80%;
     margin:auto;
 }
+/*BlogNewed页面样式*/
+.btn-submmit{
+    display: inline-block;
+
+}
+
