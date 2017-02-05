@@ -3,6 +3,8 @@
  * 功能：个人博客中心
  */
 import React, {Component} from 'react';
+/*import react-router中的Link*/
+import {Link} from 'react-router';
 
 class UserCenter extends Component {
   render() {
@@ -17,10 +19,11 @@ class UserCenter extends Component {
               <li><h3><span className="iconfont  icon-iconfont08zhiwei"> </span>Actor</h3></li>
               <li>
                 <h3>
-                  <a href="#" >
+                  <Link to="/blogNewed">
                     <span className="iconfont icon-brush"> </span>
                     写文章
-                  </a>
+                  </Link>
+
                 </h3>
               </li>
             </ul>
