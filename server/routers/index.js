@@ -1,5 +1,5 @@
 const regRouter = (app)=> {
-  app.use('/todos', require('./todos'));
+  app.use('/blogs', require('./blogs'));
 };
 
 export default regRouter;
