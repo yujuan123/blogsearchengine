@@ -1,7 +1,27 @@
 import express from 'express';
-import Todo from '../models/Todo';
+import Blog from '../models/Blog';
 
 let router = express.Router();
+
+
+
+router.post('/', (req, res, next)=> {
+  new Blog({
+    val1: req.body.val1,
+    val2: req.body.val2
+  }).save((err, todo) => {
+    if(err) {
+      return next(err);
+    } else {
+      res.send(todo);
+    }
+  });
+});
+
+
+
+
+
 
 router.get('/', (req, res)=> {
   Todo.find((err, data)=> {
@@ -30,20 +50,6 @@ router.put('/:id', (req, res)=> {
     });
   });
 });
-
-router.post('/', (req, res, next)=> {
-  new Todo({
-    val1: req.body.val1,
-    val2: req.body.val2
-  }).save((err, todo) => {
-    if(err) {
-      return next(err);
-    } else {
-      res.send(todo);
-    }
-  });
-});
-
 router.delete('/:id', (req, res)=> {
   Todo.findByIdAndRemove(req.params.id, (err)=> {
     res.send({

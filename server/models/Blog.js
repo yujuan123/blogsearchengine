@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-const Todo = mongoose.model('Todo', { 
+const Blog = mongoose.model('Todo', { 
   blogName:String,
   blogContent:String,
   blogTag:String
 });
 
-export default Todo;
+export default Blog;
