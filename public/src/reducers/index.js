@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import result from './result';
-
+import blogMessage from './blogMessage';
+import blogDetail from './blogDetail';
 const resultList = combineReducers({
-  result
+  blogMessage,
+  blogDetail
 });
 
 export default resultList;
