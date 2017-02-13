@@ -3,60 +3,51 @@ import Blog from '../models/Blog';
 
 let router = express.Router();
 
+/*把blog数据库现在的数据返回去,并按时间倒叙排列*/
+router.get('/',(req,res)=>{
+  Blog.find({}).sort({_id:-1}).exec(function(err,data){
+    res.send(data);
+  })
+});
 
-
-router.post('/', (req, res, next)=> {
-  new Blog({
-    val1: req.body.val1,
-    val2: req.body.val2
-  }).save((err, todo) => {
+/*把一条博客数据存进去*/
+router.post('/blogContent', (req, res, next)=> {
+  new Blog(req.body).save((err) => {
     if(err) {
       return next(err);
     } else {
-      res.send(todo);
+      res.status(200).send("success");
     }
   });
 });
 
-
-
-
-
-
-router.get('/', (req, res)=> {
-  Todo.find((err, data)=> {
-    console.log(data + 'server')
+/*点击查看任何一篇博客*/
+router.get('/:id',(req,res)=>{
+  Blog.findOne({_id:req.params.id},(err,data)=>{
     res.send(data);
+  })
+});
+/*点击删除任何一篇博客*/
+router.delete('/:id', (req, res)=> {
+  Blog.findByIdAndRemove(req.params.id, (err)=> {
+    res.send({
+      error: err
+    });
   });
 });
-
-router.get('/:id', (req, res)=> {
-  Todo.findOne({
-    _id: req.params.id
-  }, (err, data)=> {
-    res.send(data);
-  });
-});
-
+/*点击修改任何一篇博客
 router.put('/:id', (req, res)=> {
-  Todo.update({
+  Blog.findOneAndUpdate({
     _id: req.params.id
-  }, {
-    text: req.body.text
-  }, (err, data)=> {
+  }, (req.body) ,(err, data)=> {
     res.send({
       error: err,
       data
     });
   });
 });
-router.delete('/:id', (req, res)=> {
-  Todo.findByIdAndRemove(req.params.id, (err)=> {
-    res.send({
-      error: err
-    });
-  });
-});
+*/
+
 
 module.exports = router;
 // export default router;
