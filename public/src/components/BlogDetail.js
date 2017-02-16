@@ -29,7 +29,9 @@ var BlogDetail = React.createClass({
     console.log("博客标题："+blogNameInput);
   },
   deleteClick(){
-    this.props.sendDeleteBlog(this.props.params.id);
+    if(confirm("确定要删除吗？")){
+      this.props.sendDeleteBlog(this.props.params.id);
+    }
   },
   render() {
     return (
