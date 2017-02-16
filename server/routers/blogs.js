@@ -46,7 +46,6 @@ router.put('/:id', (req, res)=> {
       error: err,
       data
     });
-    console.log("修改后的数据"+data);
   });
 });
 

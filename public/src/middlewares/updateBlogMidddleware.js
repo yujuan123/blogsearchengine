@@ -1,6 +1,3 @@
-/**
- * Created by yujuan on 17-2-13.
- */
 import request from 'superagent';
 const updateBlogMiddleware = store=>next=>action=>{
   switch (action.type){
