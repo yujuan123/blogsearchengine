@@ -9,7 +9,7 @@ class BlogItem extends Component {
     let {id, blogName, blogContent, blogTag, userName, publishDate} = this.props;
     return (
         <div>
-          <Link to={"/blogDetail/"+id}>
+          <Link to={'/blogDetail/'+id}>
             <h2>{blogName}</h2>
           </Link>
         </div>
