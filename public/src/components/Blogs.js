@@ -6,7 +6,7 @@ class Blogs extends Component{
     let blogMessage = this.props.blogMessage;
     return (
         <div className="container">
-          <div className="row blog-body">
+          <div className="row">
             {
                 blogMessage.map((v,k)=>{
                   return <BlogItem key={k} id={v._id} blogName={v.blogName}

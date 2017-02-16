@@ -32,9 +32,7 @@ class UserCenter extends Component {
               </ul>
             </div>
           </div>
-          <div className="row">
-            <Blogs/>
-          </div>
+          <div className="blog-body"><Blogs/></div>
         </div>
     );
 
