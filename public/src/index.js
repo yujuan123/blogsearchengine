@@ -15,10 +15,12 @@ import blogMessageMiddleware from './middlewares/blogMessageMiddleware';
 import blogContentShowedMiddleware from './middlewares/blogContentShowedMiddleware';
 import blogDetailLoadedMiddleware from './middlewares/blogDetailLoadedMiddleware';
 import deleteBlogMidddleware from './middlewares/deleteBlogMidddleware';
+import updateBlogMidddleware from './middlewares/updateBlogMidddleware';
+
 
 const store = createStore(
     resultList,
-    applyMiddleware(blogMessageMiddleware,blogContentShowedMiddleware,blogDetailLoadedMiddleware,deleteBlogMidddleware)
+    applyMiddleware(blogMessageMiddleware,blogContentShowedMiddleware,blogDetailLoadedMiddleware,deleteBlogMidddleware,updateBlogMidddleware)
 );
 
 store.dispatch({
