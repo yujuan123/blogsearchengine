@@ -21,3 +21,12 @@ export const loadBlogDetail= (id)=>{
 };
 
 
+export const sendUpdateBlog = (data)=>{
+  return{
+    type:'BLOGUPDATED_SENT',
+    data
+  }
+};
+
+
+
