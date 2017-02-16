@@ -15,53 +15,57 @@ var BlogDetail = React.createClass({
   },
   editClick(){
     var blogDetailName = document.getElementById("blog-name");
+    var blogDetailContent = document.getElementById("blog-content");
     var blogName = this.props.blogDetail.blogName;
+    var blogContent = this.props.blogDetail.blogContent;
     blogDetailName.innerHTML = "<input id='name-input' type='text'  value='" + blogName + "'  />";
+    blogDetailContent.innerHTML = "<textarea id='content-input' rows='60' cols='81'>" + blogContent + "</textarea>"
   },
   updateClick(){
     var blogNameInput = document.getElementById("name-input").value;
+    var blogContentInput = document.getElementById("content-input").value;
     document.getElementById("blog-name").innerHTML = blogNameInput;
+    document.getElementById("blog-content").innerHTML = blogContentInput;
     this.props.sendUpdateBlog({
-      blogId:this.props.params.id,
-      blogName:blogNameInput
+      blogId: this.props.params.id,
+      blogName: blogNameInput,
+      blogContent: blogContentInput
     });
-    console.log("此篇博客："+this.props.params.id);
-    console.log("博客标题："+blogNameInput);
+    console.log("此篇博客：" + this.props.params.id);
+    console.log("博客标题：" + blogNameInput);
   },
   deleteClick(){
-    if(confirm("确定要删除吗？")){
+    if (confirm("确定要删除吗？")) {
       this.props.sendDeleteBlog(this.props.params.id);
     }
   },
   render() {
+    let {blogName, blogContent, userName, publishDate} = this.props.blogDetail;
     return (
-        <div>
+        <div className="blog-body">
           <div className="row">
-            <ul className="list-inline">
-              <li>
-                <button type="button" className="btn-info btn-xs">My Blogs</button>
-              </li>
-              <li>
-                <button type="button" className="btn-info btn-xs" onClick={this.editClick}>Edit Blogs</button>
-              </li>
-              <li>
-                <button type="button" className="btn-success btn-xs" onClick={this.updateClick}>Update
-                  Blogs
-                </button>
-              </li>
-              <li>
-                <button type="button" className="btn-danger btn-xs" onClick={this.deleteClick}>Delete Blogs
-                </button>
-              </li>
-            </ul>
-            <h3>Here my blogs</h3>
+            <div className="col-md-4">
+              <h1 id="blog-name" className="blog-title ">{blogName}</h1>
+              <h4>作者：{userName}  |  {publishDate}</h4>
+            </div>
+            <div className="button-group col-md-offset-4 col-md-4">
+              <ul className="list-inline">
+                <li>
+                  <button type="button" className="btn-info btn-xs" onClick={this.editClick}>Edit Blogs</button>
+                </li>
+                <li>
+                  <button type="button" className="btn-success btn-xs" onClick={this.updateClick}>Update
+                    Blogs
+                  </button>
+                </li>
+                <li>
+                  <button type="button" className="btn-danger btn-xs" onClick={this.deleteClick}>Delete Blogs
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
-          <form className="row blog-newed">
-            <span className="font-style">Blog Name</span>
-            <span className="iconfont icon-biaoti"> </span>
-
-            <p id="blog-name">{this.props.blogDetail.blogName} </p>
-          </form>
+          <p className="row" id="blog-content">{blogContent}</p>
         </div>
     );
   }
@@ -80,7 +84,7 @@ const mapDispatchToProps = (dispatch)=>({
       id
     })
   },
-  sendUpdateBlog:(data)=>{
+  sendUpdateBlog: (data)=> {
     dispatch(sendUpdateBlog(data));
   }
 });

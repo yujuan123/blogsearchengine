@@ -28,8 +28,6 @@ class BlogNewed extends Component {
       userName: userName,
       publishDate: publishDate
     });
-
-    /*再下一步：输入框置零*/
   }
 
   render() {
@@ -46,13 +44,13 @@ class BlogNewed extends Component {
             </div>
             <span className="font-style">Blog Name</span>
             <span className="iconfont icon-biaoti"> </span>
-            <input ref="blogName" type="text" className="form-control blog-name"/>
+            <input ref="blogName" type="text" className="form-control " placeholder="博客标题"/>
             <span className="font-style">Write Here</span>
             <span className="iconfont icon-write"> </span>
-            <textarea ref="blogContent" className="form-control" rows="10" cols="10"/>
+            <textarea ref="blogContent" className="form-control" rows="10" cols="10" placeholder="书写博客内容"/>
             <span className="font-style">Enter Some Tags</span>
             <span className="iconfont icon-biaoqian"> </span>
-            <input ref="blogTag" type="text" className="form-control blog-tags"/>
+            <input ref="blogTag" type="text" className="form-control blog-tags" placeholder="博客标签"/>
             <button type="button" className="btn-submmit mt20 mb30  btn btn-info" onClick={this.handleClick.bind(this)}>
               <span className="iconfont icon-fabiao"> </span>
               Publish This Blog

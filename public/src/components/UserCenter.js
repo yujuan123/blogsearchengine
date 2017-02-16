@@ -17,7 +17,7 @@ class UserCenter extends Component {
             <div className="col-md-3 ">
               <img src="images/userPhoto.jpg"/>
             </div>
-            <div className=" col-md-9">
+            <div className="user-info col-md-8">
               <ul>
                 <li><h3><span className=" iconfont icon-user-outline"> </span>FanBingBing</h3></li>
                 <li><h3><span className="iconfont  icon-zhiwei"> </span>Actor</h3></li>

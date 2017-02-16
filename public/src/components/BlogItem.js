@@ -8,10 +8,12 @@ class BlogItem extends Component {
     /*获取博客相关信息的数据*/
     let {id, blogName, blogContent, blogTag, userName, publishDate} = this.props;
     return (
-        <div>
+        <div className="col-md-12 blog-item">
+          <p className="">by  {userName}  ,  {publishDate}</p>
           <Link to={'/blogDetail/'+id}>
-            <h2>{blogName}</h2>
+            <h2 className="blog-name">{blogName}</h2>
           </Link>
+          <p className="blog-content">{blogContent}</p>
         </div>
     )
   }
