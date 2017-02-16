@@ -24,6 +24,7 @@ router.post('/blogContent', (req, res, next)=> {
 /*点击查看任何一篇博客*/
 router.get('/:id',(req,res)=>{
   Blog.findOne({_id:req.params.id},(err,data)=>{
+    console.log("你所点击的博客"+data);
     res.send(data);
   })
 });
@@ -35,18 +36,20 @@ router.delete('/:id', (req, res)=> {
     });
   });
 });
-/*点击修改任何一篇博客
+/*点击修改任何一篇博客*/
 router.put('/:id', (req, res)=> {
+  console.log("修改后的博客标题！"+req.body.blogName);
   Blog.findOneAndUpdate({
-    _id: req.params.id
-  }, (req.body) ,(err, data)=> {
+    _id: req.body.blogId
+  }, ({blogName:req.body.blogName}) ,(err, data)=> {
     res.send({
       error: err,
       data
     });
+    console.log("修改后的数据"+data);
   });
 });
-*/
+
 
 
 module.exports = router;
