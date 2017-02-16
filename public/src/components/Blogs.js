@@ -9,7 +9,7 @@ class Blogs extends Component{
           <div className="row">
             {
                 blogMessage.map((v,k)=>{
-                  return <BlogItem id={v._id} blogName={v.blogName}
+                  return <BlogItem key={k} id={v._id} blogName={v.blogName}
                   blogContent={v.blogContent} blogTag={v.blogTag}
                   userName={v.userName} publishDate={v.publishDate}/>
                 })
