@@ -2,7 +2,7 @@
  * Created by yujuan on 17-2-12.
  */
 import request from 'superagent';
-const deleteBlogMidddleware = store=>next=>action=>{
+const deleteBlogMiddleware = store=>next=>action=>{
   switch(action.type){
     case 'BLOG_DELETED':
       request.delete(`/blogs/${action.id}`)
@@ -18,4 +18,4 @@ const deleteBlogMidddleware = store=>next=>action=>{
   next(action); 
 };
 
-export default deleteBlogMidddleware;
+export default deleteBlogMiddleware;

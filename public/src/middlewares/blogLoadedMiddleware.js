@@ -2,7 +2,7 @@
  * Created by yujuan on 17-2-11.
  */
 import request from 'superagent';
-const blogContentShowedMiddleware = store=>next=>action=> {
+const blogLoadedMiddleware = store=>next=>action=> {
   switch (action.type) {
     case 'USERBLOGS_LOADED':
       request.get('/blogs')
@@ -18,4 +18,4 @@ const blogContentShowedMiddleware = store=>next=>action=> {
   }
   next(action);
 };
-export default blogContentShowedMiddleware;
+export default blogLoadedMiddleware;
