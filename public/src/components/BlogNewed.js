@@ -15,8 +15,7 @@ class BlogNewed extends Component {
     console.log("博客标题 为：" + blogName);
     console.log("博客内容 为:" + blogContent);
     console.log("博客标签 为: " + blogTag);
-    /*获取发表人*/
-    var userName = this.refs.userName.value.trim();
+    
     /*获取发表时间*/
     var date = new Date();
     var publishDate = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
@@ -25,7 +24,6 @@ class BlogNewed extends Component {
       blogName: blogName,
       blogContent: blogContent,
       blogTag: blogTag,
-      userName: userName,
       publishDate: publishDate
     });
   }
@@ -38,10 +36,6 @@ class BlogNewed extends Component {
             <h3>Write,a new blog</h3>
           </div>
           <form className="row blog-newed">
-            <div>
-              <span>发表人：</span>
-              <input ref="userName" type="text" placeholder="填写用户名"/>
-            </div>
             <span className="font-style">Blog Name</span>
             <span className="iconfont icon-biaoti"> </span>
             <input ref="blogName" type="text" className="form-control " placeholder="博客标题"/>

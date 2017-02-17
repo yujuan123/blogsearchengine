@@ -40,13 +40,13 @@ var BlogDetail = React.createClass({
     }
   },
   render() {
-    let {blogName, blogContent, userName, publishDate} = this.props.blogDetail;
+    let {blogName, blogContent, publishDate} = this.props.blogDetail;
     return (
         <div className="blog-body">
           <div className="row">
             <div className="col-md-4">
               <h1 id="blog-name" className="blog-title ">{blogName}</h1>
-              <h4>作者：{userName}  |  {publishDate}</h4>
+              <h4>作者： |  {publishDate}</h4>
             </div>
             <div className="button-group col-md-offset-4 col-md-4">
               <ul className="list-inline">

@@ -10,8 +10,7 @@ class Blogs extends Component{
             {
                 blogMessage.map((v,k)=>{
                   return <BlogItem key={k} id={v._id} blogName={v.blogName}
-                  blogContent={v.blogContent} blogTag={v.blogTag}
-                  userName={v.userName} publishDate={v.publishDate}/>
+                  blogContent={v.blogContent} blogTag={v.blogTag} publishDate={v.publishDate}/>
                 })
             }
           </div>

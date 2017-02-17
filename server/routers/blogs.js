@@ -38,7 +38,7 @@ router.delete('/:id', (req, res)=> {
 });
 /*点击修改任何一篇博客*/
 router.put('/:id', (req, res)=> {
-  console.log("修改后的博客标题！"+req.body.blogContent);
+  console.log("修改后的博客内容！"+req.body.blogContent);
   Blog.findOneAndUpdate({
     _id: req.body.blogId
   }, ({blogName:req.body.blogName,blogContent:req.body.blogContent}) ,(err, data)=> {

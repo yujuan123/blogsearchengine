@@ -6,10 +6,10 @@ import {Link} from 'react-router';
 class BlogItem extends Component {
   render() {
     /*获取博客相关信息的数据*/
-    let {id, blogName, blogContent, blogTag, userName, publishDate} = this.props;
+    let {id, blogName, blogContent, blogTag, publishDate} = this.props;
     return (
         <div className="col-md-12 blog-item">
-          <p className="">by  {userName}  ,  {publishDate}</p>
+          <p className="">by    ,  {publishDate}</p>
           <Link to={'/blogDetail/'+id}>
             <h2 className="blog-name">{blogName}</h2>
           </Link>
